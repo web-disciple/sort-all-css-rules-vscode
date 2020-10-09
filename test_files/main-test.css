@@ -1,0 +1,12 @@
+.test {
+  color: #fff;
+  position: absolute;
+  z-index: 99;
+}
+.test2 {
+  background-color: #fff;
+  display: flex;
+  position: relative;
+  text-align: center;
+  z-index: 30;
+}

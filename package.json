@@ -10,14 +10,14 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:sort-all-css-rules-in-css-files.helloWorld"
+		"onCommand:sort-all-css-rules-in-css-files.sorting"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "sort-all-css-rules-in-css-files.helloWorld",
-				"title": "Hello World"
+				"command": "sort-all-css-rules-in-css-files.sorting",
+				"title": "Sorting all css in the current files"
 			}
 		]
 	},
