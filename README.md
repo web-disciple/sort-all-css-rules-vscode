@@ -3,7 +3,7 @@
 Sort all your css properties in one command.  
 It is recommended to use the extension only for css files as it does not currently support scss nesting.
 
-```Sort all css rules in css files```
+```vscode command: > Sort all css rules in css files```
 
 ## Features
 <!-- \!\[feature X\]\(images/feature-x.png\) -->
