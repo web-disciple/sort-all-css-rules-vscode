@@ -10,30 +10,30 @@ export function activate(context: vscode.ExtensionContext) {
       if (editor) {
         const document = editor.document;
         const selection = editor.selection;
-        // Get the css within the selection
+
+        // Gets the CSS within the selection
         let css = document.getText(selection);
 
-        // Format property css
+        // Formats CSS properties
         let reordered: Array<any> = [];
-        let formated: any = css;
-        formated = formated.replace(/(\r\n|\n|\r)/gm, "");
-        formated = formated.replace(/\s/g, "");
-        formated = formated.split(new RegExp("(?<={)(.*?)(?=})"));
-        formated.forEach((element: any, index: number) => {
-          let reorderedElement: any = element;
-          if ((index + 1) % 2 === 0) {
-            reorderedElement = reorderedElement.split(";");
-            reorderedElement = reorderedElement.sort();
-            reorderedElement = reorderedElement.join(";");
-            reorderedElement = reorderedElement.substring(1);
-          }
-          reordered.push(reorderedElement);
-        });
-        let finalReordered = reordered.join("");
+        let formatted: any = css;
+        formatted = formatted.replace(/(\r\n|\n|\r)/gm, "");
+        formatted = formatted.replace(/\s/g, "");
+        formatted = formatted.split(new RegExp("(?<={)(.*?)(?=})"));
 
-        // display
+        // Orders CSS properties alphabetically
+        formatted.forEach((element: any, index: number) => {
+          if ((index + 1) % 2 === 0) {
+            element = element.split(";").sort().join(";").substring(1);
+          }
+          reordered.push(element);
+        });
+
+        const reorderedSelection = reordered.join("");
+
+        // Injects reordered properties in the editor
         editor.edit((editBuilder) => {
-          editBuilder.replace(selection, finalReordered);
+          editBuilder.replace(selection, reorderedSelection);
         });
       }
     }
