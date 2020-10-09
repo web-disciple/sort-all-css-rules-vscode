@@ -4,6 +4,7 @@
 	"description": "Sort all css rules in css files",
 	"version": "0.0.1",
 	"author": "web_disciple",
+	"publisher": "web_disciple",
 	"engines": {
 		"vscode": "^1.50.0"
 	},
