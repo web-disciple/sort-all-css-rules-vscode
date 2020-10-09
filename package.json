@@ -1,5 +1,5 @@
 {
-  "name": "sort-all-css-rules-in-css-files",
+	"name": "sort-all-css-rules-in-css-files",
 	"displayName": "Sort all css rules in css files",
 	"description": "Sort all css rules in css files",
 	"version": "0.0.1",
@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:sort-all-css-rules-in-css-files.helloWorld"
+		"onCommand:sort-all-css-rules-in-css-files.helloWorld"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -30,7 +30,7 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.50.0",
+		"@types/vscode": "^1.42.0",
 		"@types/glob": "^7.1.3",
 		"@types/mocha": "^8.0.0",
 		"@types/node": "^12.11.7",
