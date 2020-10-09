@@ -64,7 +64,6 @@ export function activate(context: vscode.ExtensionContext) {
       if (editor) {
         const document = editor.document;
         const selection = editor.selection;
-
         // Get the css within the selection
         let css = document.getText(selection);
 
@@ -84,10 +83,11 @@ export function activate(context: vscode.ExtensionContext) {
           }
           reordered.push(reorderedElement);
         });
-        const finalReordered = reordered.join("")
-        console.log(finalReordered);
-        editor.edit(editBuilder => {
-        	editBuilder.replace(selection, finalReordered);
+        let finalReordered = reordered.join("");
+
+        // display
+        editor.edit((editBuilder) => {
+          editBuilder.replace(selection, finalReordered);
         });
       }
     }
